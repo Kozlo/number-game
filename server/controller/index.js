@@ -76,6 +76,7 @@ module.exports = {
         }
 
         game.attempts += 1;
+        game.guesses.push(number);
 
         if (parseInt(game.number, 10) === parseInt(number, 10)) {
           game.won = true;
