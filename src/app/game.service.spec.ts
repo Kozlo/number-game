@@ -1,12 +1,18 @@
 /* tslint:disable:no-unused-variable */
 
+import { Http } from '@angular/http';
 import { TestBed, async, inject } from '@angular/core/testing';
 import { GameService } from './game.service';
+
+class HttpMock { }
 
 describe('GameService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [GameService]
+      providers: [
+        GameService,
+        { provide: Http, useClass: HttpMock }
+      ]
     });
   });
 
