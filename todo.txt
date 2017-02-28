@@ -1,0 +1,55 @@
+DB
+(DONE)- add the DB to the app
+- create a model for a game: id, attempts, game status (boolean)
+
+API
+- config file file:
+  - range
+  - max attempts
+- post for a new game
+  - generate a random number from 1 - 5
+- get for an existing game
+- patch for an update (attempts + done)
+  - if the attempts exceed
+
+
+Client
+(DONE)- create a base UI
+- create a component with a form with a number input
+  - on init create a new game
+    - maybe add the link to the URL so that the user can reload the page and keep playing an unfinished game
+- add success component (or use it in the form component)
+- add a failure component (or user it in the form component)
+
+Tests
+- write unit tests for the API
+- write e2e tests
+- write unit tests for UI components
+
+Style (optional)
+- add some custom style
+
+Other
+- update the readme with other instructions and description of the app
+- create a github repo (or bitbucket)
+- create a zip file with the app
+- add a DB dump to the zip file
+- create a heroku app (if there's time)
+
+Spec:
+Exercise description:
+·         Create an interface that allows a user to enter a number in a certain range.
+·         There has to be a predefined number hidden from the user (generated on back-end side).
+·         The user should know what that range is and should be able to have three attempts.
+·         Every time the user enters a number, this will be logged in a database and show in the interface the number of intents. (using file-system is also fine)
+·         If the user enters a number that matches the predefined number, a success message should be shown.
+
+Note:
+- Use node.js and any front-end framework
+- preferable don't use any extensive seed or boilerplate
+- make sure your code is tested
+- pay attention to the code quality
+
+Deliverable
+·         All application files plus the database dump (if applicable) in a zip file.
+·         Please Upload the zip file in a cloud such as Google Drive or Dropbox and send the link.

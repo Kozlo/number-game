@@ -3,6 +3,10 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+// connect to the mongoDB
+mongoose.connect('mongodb://localhost/myappdatabase');
 
 // Get our API routes
 const api = require('./server/routes/api');
