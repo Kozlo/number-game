@@ -7,28 +7,29 @@ import { HttpModule } from '@angular/http';
 
 // components
 import { AppComponent } from './app.component';
-import { PostsComponent } from './posts/posts.component';
 
 // services
-import { PostsService } from './posts.service';
+import { GameService } from './game.service';
+import { GameComponent } from './game/game.component';
 
 // Define the routes
 const ROUTES = [
   {
     path: '',
-    redirectTo: 'posts',
+    redirectTo: 'game',
     pathMatch: 'full'
   },
   {
-    path: 'posts',
-    component: PostsComponent
+    path: 'game',
+    component: GameComponent
   }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostsComponent
+    GameComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,7 @@ const ROUTES = [
     HttpModule,
     RouterModule.forRoot(ROUTES) // Add routes to the app
   ],
-  providers: [PostsService],
+  providers: [GameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
