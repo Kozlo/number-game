@@ -7,8 +7,13 @@ describe('mean-app App', function() {
     page = new MeanAppPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display the app title', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getStartButtonText()).toEqual('Start!');
+  });
+
+  it('should display the start button', () => {
+    page.navigateTo();
+    expect(page.getStartButtonText()).toEqual('Start!');
   });
 });

@@ -8,4 +8,8 @@ export class MeanAppPage {
   getParagraphText() {
     return element(by.css('app-root h1')).getText();
   }
+
+  getStartButtonText() {
+    return element(by.css('button')).getText();
+  }
 }
