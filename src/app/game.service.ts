@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
+
 import 'rxjs/add/operator/map';
 import { Observable } from  'rxjs/Observable';
 
@@ -15,6 +16,25 @@ export class GameService {
    */
   createGame(): Observable<Response> {
     return this.http.post('/api/game', {})
+      .map(res => res.json());
+  }
+
+  /**
+   * Calls the API to get an existing game based on its ID.
+   */
+  getGame(gameId: string): Observable<Response> {
+    return this.http.get(`/api/game/${gameId}`)
+      .map(res => res.json());
+  }
+
+
+  /**
+   * Calls the API to attempt to guess the number for a game.
+   */
+  guessGame(gameId: string, number: number): Observable<Response> {
+    const params = { number };
+
+    return this.http.post(`/api/guessGame/${gameId}`, params)
       .map(res => res.json());
   }
 }
