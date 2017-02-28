@@ -1,17 +1,15 @@
-DB
+(DONE)DB
 (DONE)- add the DB to the app
-- create a model for a game: id, attempts, game status (boolean)
+(DONE)- create a model for a game: id, attempts, game status (boolean)
 
-API
-- config file file:
-  - range
-  - max attempts
-- post for a new game
-  - generate a random number from 1 - 5
-- get for an existing game
-- patch for an update (attempts + done)
-  - if the attempts exceed
-
+(DONE)API
+(DONE)- config file file:
+  (DONE)- range
+  (DONE)- max attempts
+(DONE)- post for a new game
+  (DONE)- generate a random number from 1 - 5
+(DONE)- get for an existing game
+(DONE)- add a route for attempting a guess
 
 Client
 (DONE)- create a base UI

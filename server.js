@@ -5,8 +5,12 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-// connect to the mongoDB
-mongoose.connect('mongodb://localhost/myappdatabase');
+// override the default promise library and connect to the mongoDB
+const databaseName = 'mongodb://localhost/number-game';
+
+mongoose.Promise = global.Promise;
+mongoose.connect(databaseName, () => console.log(`Successfully connected to the DB: ${databaseName}`));
+mongoose.connection.on('error', () => console.info(`Error: Could not connect to MongoDB ${databaseName}: `, err));
 
 // Get our API routes
 const api = require('./server/routes/api');

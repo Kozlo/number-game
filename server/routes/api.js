@@ -1,6 +1,12 @@
+// dependencies
 const express = require('express');
 const router = express.Router();
-const Game = require('../model/game');
+
+// controller
+const {
+  createGame, getGame, guessGame
+} = require('../controller');
+
 
 /* GET api listing. */
 router.get('/', (req, res) => {
@@ -8,18 +14,12 @@ router.get('/', (req, res) => {
 });
 
 // create a new game
-router.post('/game', (req, res) => {
-
-});
+router.post('/game', createGame);
 
 // get a game
-router.get('/game:id', (req, res) => {
-
-});
+router.get('/game/:id', getGame);
 
 // update a game
-router.patch('/game:id', (req, res) => {
-
-});
+router.post('/guessGame/:id', guessGame);
 
 module.exports = router;
