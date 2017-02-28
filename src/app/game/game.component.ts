@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'
+
 import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-game',
-  templateUrl: './game.component.html',
-  styleUrls: ['./game.component.css']
+  templateUrl: './game.component.html'
 })
 export class GameComponent {
 
   constructor(
+    private router: Router,
     private gameService: GameService
   ) { }
 
@@ -18,7 +20,6 @@ export class GameComponent {
   }
 
   private onGameCreated(game) {
-    console.log('new game created: ', game);
-    // TODO: redirect to an existing game component
+    this.router.navigate([`game/${game._id}`]);
   }
 }

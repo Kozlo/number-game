@@ -1,0 +1,31 @@
+<div *ngIf="game.finished === false">
+  <p>
+    Guess a number within the range 1 - 5!
+  </p>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <p>
+      <label>Number:</label>
+      <input type="number" formControlName="number" min="1" max="5">
+    </p>
+    <button type="submit" [disabled]="!form.valid">Submit</button>
+  </form>
+  <p>
+    You have {{getRemainingAttempts(game.attempts)}} more attempts!
+  </p>
+</div>
+<div *ngIf="game.won === true">
+  <h2>
+    Congratulations, you won!
+  </h2>
+  <p>
+    <a routerLink="/game">Try again!</a>
+  </p>
+</div>
+<div *ngIf="game.finished === true && game.won === false">
+  <h2>
+    Unfortunately you didn't win.
+  </h2>
+  <p>
+    <a routerLink="/game">Retry!</a>
+  </p>
+</div>

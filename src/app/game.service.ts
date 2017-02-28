@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { Headers, RequestOptions } from '@angular/http';
 
 import 'rxjs/add/operator/map';
 import { Observable } from  'rxjs/Observable';
@@ -33,8 +34,10 @@ export class GameService {
    */
   guessGame(gameId: string, number: number): Observable<Response> {
     const params = { number };
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const options = new RequestOptions({ headers: headers });
 
-    return this.http.post(`/api/guessGame/${gameId}`, params)
+    return this.http.post(`/api/guessGame/${gameId}`, params, options)
       .map(res => res.json());
   }
 }

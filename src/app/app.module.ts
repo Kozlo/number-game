@@ -2,7 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 // components
@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 // services
 import { GameService } from './game.service';
 import { GameComponent } from './game/game.component';
+import { ExistingGameComponent } from './game/existing-game.component';
 
 // Define the routes
 const ROUTES = [
@@ -22,6 +23,10 @@ const ROUTES = [
   {
     path: 'game',
     component: GameComponent
+  },
+  {
+    path: 'game/:id',
+    component: ExistingGameComponent
   }
 ];
 
@@ -29,11 +34,13 @@ const ROUTES = [
   declarations: [
     AppComponent,
     GameComponent,
+    ExistingGameComponent,
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES) // Add routes to the app
   ],

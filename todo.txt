@@ -13,19 +13,16 @@
 
 Client
 (DONE)- create a base UI
-- create a component with a form with a number input
-  - on init create a new game
-    - maybe add the link to the URL so that the user can reload the page and keep playing an unfinished game
-- add success component (or use it in the form component)
-- add a failure component (or user it in the form component)
+(DONE)- create a component with a form with a number input
+  (DONE)- on init create a new game
+    (DONE)- maybe add the link to the URL so that the user can reload the page and keep playing an unfinished game
+(DONE)- add success component (or use it in the form component)
+(DONE)- add a failure component (or user it in the form component)
 
 Tests
 - write unit tests for the API
 - write e2e tests
 - write unit tests for UI components
-
-Style (optional)
-- add some custom style
 
 Other
 - update the readme with other instructions and description of the app
